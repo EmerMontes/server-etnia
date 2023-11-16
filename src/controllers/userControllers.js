@@ -5,8 +5,8 @@ const { Op } = require("sequelize");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
-// const URL = "https://etnia.vercel.app";
-const URL = "http://localhost:3030";
+const URL = "https://etnia.vercel.app";
+// const URL = "http://localhost:3030";
 
 
 const uuid = require("uuid");

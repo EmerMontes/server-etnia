@@ -1,7 +1,8 @@
 const sgMail = require("@sendgrid/mail");
 const confirmPurchase = async (id) => {
     const email = "jmrodhurtado1989@hotmail.com";
-    const URL = "http://localhost:3030"
+    // const URL = "http://localhost:3030"
+     const URL = "http://etnia.vercel.app"
     console.log("estoy confirmando compras")
     console.log(id);
     try {
