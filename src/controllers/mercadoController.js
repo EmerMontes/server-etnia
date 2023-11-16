@@ -26,7 +26,7 @@ const placeOrder = async (req, res) => {
       body: {
         items: items,
         back_urls: {
-          failure: "http://etnia.verce.app",
+          failure: "http://etnia.vercel.app",
           pending: "http://localhost:3001/purchase/pending",
           success: "http://etnia.vercel.app",
         },
