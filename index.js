@@ -1,11 +1,11 @@
 const axios = require("axios");
-const server = require("./src/server.js");
+const server = require("./src/server");
 const { conn } = require("./src/db.js");
 const express = require("express");
 const { expressjwt: jwt } = require("express-jwt");
 const jwksRsa = require("jwks-rsa");
-const User = require("./src/models/User.js");
-const prendas = require("./src/controllers/savedInDB.js");
+const User = require("./src/models/User");
+const prendas = require("./src/controllers/savedInDB");
 const cloudinary = require("cloudinary").v2;
 const reviewsRouter = require("./src/routes/reviewsRouter.js");
 const app = express();
@@ -64,7 +64,7 @@ app.use(express.json());
 const PORT = process.env.PORT || 3001;
 
 conn
-  .sync({ force: true })
+  .sync({ force: false })
   .then(() => {
     prendas();
 

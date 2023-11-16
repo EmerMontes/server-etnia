@@ -8,15 +8,16 @@ const {
 } = process.env;
 
 
-//  const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/softCommerce`, {
-//     logging: false, 
-//     native: false, 
-//   });
+ const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/softCommerce`, {
+    logging: false, 
+    native: false, 
+  });
 
- const sequelize = new Sequelize(DB_DEPLOY, {
-   logging: false, 
-   native: false, 
- });
+// const sequelize = new Sequelize(DB_DEPLOY, {
+
+//   logging: false, 
+//   native: false, 
+// });
 
 const basename = path.basename(__filename);
 
@@ -91,8 +92,8 @@ PaymentMethod.belongsToMany(User, { through: "user_paymentMethod" });
 User.hasMany(Reviews, { foreignKey: "userId", sourceKey: "id" });
 Reviews.belongsTo(User, { foreignKey: "userId", targetKey: "id" });
 
-Products.hasMany(Reviews, { foreignKey: "productId", sourceKey: "id" });
-Reviews.belongsTo(Products, { foreignKey: "productId", targetKey: "id" });
+Products.hasMany(Reviews, { foreignKey: "productsId", sourceKey: "id" });
+Reviews.belongsTo(Products, { foreignKey: "productsId", targetKey: "id" });
 
 Logistics.hasMany(Shipments, { foreignKey: "logisticsId", sourceKey: "id" });
 Shipments.belongsTo(Logistics, { foreignKey: "logisticsId", targetKey: "id" });
